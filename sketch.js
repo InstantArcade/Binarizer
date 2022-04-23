@@ -211,7 +211,7 @@ function setup()
   nameInput.style('width: 250px');
   nameInput.position(imgXSpacing+100,5);
   
-  progmem = createCheckbox('PROGMEM prefix', true);
+  progmem = createCheckbox('PROGMEM prefix', false);
   progmem.position(imgXSpacing, fieldYSpacing*6);
 }
 
@@ -223,13 +223,15 @@ function saveCode( sourceImg )
   let bitCount=0;
   let bval=0;
   let runWidth = 400;
-  let strOut = "byte "+ nameInput.value() + (progmem.checked() ? " PROGMEM ":"") +"[] = { ";
   
   if( !pad.checked() )
   {
     // only pad to image width (but multiple of 8) instead of 400
     runWidth = (sourceImg.width+7) & ~7;
   }
+
+  let strOut = "// " + nameInput.value() + " Resized to fit 400x240 display - Width:" + runWidth + ", Height:" + sourceImg.height;
+  strOut += "\nbyte "+ (progmem.checked() ? "PROGMEM ":"") +nameInput.value() +"[] = { ";
   
   for( let y=0; y < sourceImg.height; y++ )
   {
@@ -319,6 +321,6 @@ function draw()
   }
   textSize(14);
   textStyle(NORMAL);
-  text("Threshold",imgXSpacing,fieldYSpacing*2-5);
-  text("Data/Filename",imgXSpacing,fieldYSpacing-5);
+  text("Threshold",imgXSpacing,fieldYSpacing*2-10);
+  text("Data/Filename",imgXSpacing,fieldYSpacing-10);
 }
