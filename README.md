@@ -18,3 +18,6 @@ This is fully open-source under the MIT License.
 Although I'd love for you to contribute to it, make some beautiful CSS, add features, fix problems, and generally make it better; you can do whatever 
 you like with it. Print it out and eat it, wear it as a hat, send it as Morse code, use it as a drum track for a synthwave jam. Just use your common sense 
 and don't come crying to me if it ends in financial ruin, divorce, outbreak of war, or some other malady.
+
+## Hosted
+If you'd rather not deal with the source code yourself, the current version is hosted by GitHub and available to use online at https://instantarcade.github.io/Binarizer/
